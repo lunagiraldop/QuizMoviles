@@ -1,4 +1,6 @@
+// Creación de clase para representar a un usuario
 class Usuario( val documento: String, val telefono: String, val correo: String) {
+    // Funciones de validación del documento no puede ser vacío.
     fun validarDocumento(): Boolean {
         if(documento.isNotBlank()) {
             return true
@@ -8,6 +10,7 @@ class Usuario( val documento: String, val telefono: String, val correo: String) 
         }
     }
 
+    // Función de validación del teléfono, debe contener solo dígitos.
     fun validarTelefono(): Boolean {
         if(telefono.all { it.isDigit() }) {
             return true
@@ -17,6 +20,7 @@ class Usuario( val documento: String, val telefono: String, val correo: String) 
         }
     }
 
+    // Función de validación del correo, debe contener "@" y ".".
     fun validarCorreo(): Boolean {
         if(correo.contains("@") && correo.contains(".")) {
             return true
